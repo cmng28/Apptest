@@ -1,0 +1,142 @@
+import type { Journal } from "./journal";
+
+// Manually entered examples. All personal reactions and notes are fictional.
+export const SAMPLE_JOURNAL: Journal = {
+  version: 1,
+  works: [
+    {
+      id: "sample-composition-viii",
+      type: "artwork",
+      title: "Composition VIII",
+      creator: "Wassily Kandinsky",
+      year: "1923",
+      createdAt: "2026-09-01T12:00:00.000Z",
+    },
+    {
+      id: "sample-blue",
+      type: "album",
+      title: "Blue",
+      creator: "Joni Mitchell",
+      year: "1971",
+      createdAt: "2026-09-03T12:00:00.000Z",
+    },
+    {
+      id: "sample-past-lives",
+      type: "movie",
+      title: "Past Lives",
+      creator: "Celine Song",
+      year: "2023",
+      createdAt: "2026-09-06T12:00:00.000Z",
+    },
+    {
+      id: "sample-nighthawks",
+      type: "artwork",
+      title: "Nighthawks",
+      creator: "Edward Hopper",
+      year: "1942",
+      createdAt: "2026-09-09T12:00:00.000Z",
+    },
+    {
+      id: "sample-in-rainbows",
+      type: "album",
+      title: "In Rainbows",
+      creator: "Radiohead",
+      year: "2007",
+      createdAt: "2026-09-12T12:00:00.000Z",
+    },
+    {
+      id: "sample-space-song",
+      type: "song",
+      title: "Space Song",
+      creator: "Beach House",
+      year: "2015",
+      createdAt: "2026-09-18T12:00:00.000Z",
+    },
+  ],
+  entries: [
+    {
+      id: "sample-entry-composition-viii",
+      workId: "sample-composition-viii",
+      date: "2026-09-01",
+      status: "experienced",
+      reaction: "liked",
+      toExplore: false,
+      tags: ["abstract", "color", "playful"],
+      notes:
+        "The circles and sharp lines felt like a conversation. I kept finding new paths for my eye.",
+      createdAt: "2026-09-01T12:00:00.000Z",
+    },
+    {
+      id: "sample-entry-blue",
+      workId: "sample-blue",
+      date: "2026-09-03",
+      status: "experienced",
+      reaction: "liked",
+      toExplore: false,
+      tags: ["intimate", "songwriting", "acoustic"],
+      notes:
+        "A quiet evening listen. The small details in the lyrics stayed with me the next morning.",
+      createdAt: "2026-09-03T12:00:00.000Z",
+    },
+    {
+      id: "sample-entry-past-lives",
+      workId: "sample-past-lives",
+      date: "2026-09-06",
+      status: "experienced",
+      reaction: "liked",
+      toExplore: false,
+      tags: ["quiet", "memory", "relationships"],
+      notes:
+        "I liked how much the pauses carried. The last scene made me think about the lives we imagine.",
+      createdAt: "2026-09-06T12:00:00.000Z",
+    },
+    {
+      id: "sample-entry-nighthawks",
+      workId: "sample-nighthawks",
+      date: "2026-09-09",
+      status: "saved",
+      reaction: null,
+      toExplore: true,
+      tags: ["city", "night"],
+      notes:
+        "A friend mentioned this painting. Save it for a closer look and read about the light.",
+      createdAt: "2026-09-09T12:00:00.000Z",
+    },
+    {
+      id: "sample-entry-in-rainbows-first",
+      workId: "sample-in-rainbows",
+      date: "2026-09-12",
+      status: "experienced",
+      reaction: "liked",
+      toExplore: false,
+      tags: ["layered", "rhythm", "atmospheric"],
+      notes:
+        "The textures clicked on a long walk. I wanted to start the album again as soon as it ended.",
+      createdAt: "2026-09-12T12:00:00.000Z",
+    },
+    {
+      id: "sample-entry-space-song",
+      workId: "sample-space-song",
+      date: "2026-09-18",
+      status: "experienced",
+      reaction: "liked",
+      toExplore: false,
+      tags: ["dreamy", "atmospheric", "night"],
+      notes:
+        "The floating melody matched the train ride home. A song I would return to after dark.",
+      createdAt: "2026-09-18T12:00:00.000Z",
+    },
+    {
+      id: "sample-entry-in-rainbows-revisit",
+      workId: "sample-in-rainbows",
+      date: "2026-09-25",
+      status: "experienced",
+      reaction: "mixed",
+      toExplore: true,
+      tags: ["layered", "revisit"],
+      notes:
+        "A second listen felt less immediate today. I still love the rhythm, but want another listen when I can focus.",
+      createdAt: "2026-09-25T12:00:00.000Z",
+    },
+  ],
+};
