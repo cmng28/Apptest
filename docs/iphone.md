@@ -29,12 +29,28 @@ Files are validated before restoration. An invalid file, failed storage write, o
 
 Safari and the Home Screen app may have separate storage. Each device/browser has its own journal; there is no account or automatic cloud sync. Clearing browser/site data can remove entries, so keep a backup.
 
-## Hosting preparation — publication pending
+## Enable the prepared website
+
+The tested production website has been uploaded to the repository's `gh-pages` branch after publication was authorized. The cloud session could upload the files using Git, but its network policy blocked GitHub's settings API and the website address. Hosting activation and the live link have not been verified.
+
+To switch it on without downloading anything:
+
+1. Sign in to GitHub and open [Apptest → Settings → Pages](https://github.com/cmng28/Apptest/settings/pages).
+2. Under **Build and deployment**, choose **Deploy from a branch** as the **Source**.
+3. Choose **gh-pages** as the branch, keep the folder at **/ (root)**, and click **Save**.
+4. Wait for GitHub to show the published website link. If it is still building, refresh the Pages settings page after a few minutes.
+5. Open that link in Safari on your iPhone, then follow the Home Screen steps above.
+
+If GitHub asks for a paid upgrade, stop there. No plan upgrade or repository-visibility change is authorized. The existing files remain ready for another approved free hosting option.
+
+The publishing branch is a built snapshot. Updating the source on `main` does not automatically update it. Future website updates require another tested production build and publishing-branch update.
+
+## Alternative: GitHub Actions hosting
 
 - `downloads/Still-iphone-site.zip` contains the production website, icons, manifest and offline worker, ready for static HTTPS hosting.
 - `.github/workflows/publish-iphone.yml` is **manual only**. Pushing code cannot publish the website. It builds and tests the app before publishing through GitHub Pages when an authorized user runs it.
 - GitHub Pages must be available at no additional charge under the repository/account's existing settings. Those settings could not be inspected through the cloud's blocked GitHub API route. No account plan or repository visibility has been changed. If Pages requires a paid plan, use another approved free static host.
-- After publication approval, configure Pages to use GitHub Actions and run **Publish Still after approval**. The Actions job reports the real website address on success. Do not treat a guessed address as a working app link.
+- As an alternative to the branch method above, configure Pages to use GitHub Actions and run **Publish Still after approval**. The Actions job reports the real website address on success. Do not treat a guessed address as a working app link. GitHub's supplied Actions token cannot enable a new Pages site by itself, so this workflow requires Pages to be enabled in repository settings first.
 - The hosted app page can be reachable by others. Personal entries stay in each browser and are never uploaded by the app.
 
 ## Development and validation

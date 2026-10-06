@@ -54,3 +54,14 @@ Automated browser verification used system Chromium at desktop/phone-size viewpo
 - iPhone safe-area CSS and viewport settings are included. Real-device Safari installation still needs a check after approved HTTPS hosting. Downloading Playwright WebKit was blocked by network policy at the official download destinations; no trust checks were disabled and no Safari pass is claimed.
 - The complete static-site ZIP and a manual-only GitHub Pages workflow are prepared. The workflow's only trigger is `workflow_dispatch`; source pushes do not deploy a site. Account eligibility for free Pages could not be checked through the blocked API route. No website, paid service, repository-visibility change, or plan upgrade was made.
 - The refreshed desktop ZIP was opened through local HTTP at a phone-size viewport. Adding an entry, downloading a backup containing its note, and retrieving it after reload passed with zero page errors or external requests. Both ZIP archives passed integrity checks; the hosted ZIP's files exactly matched the tested production build. Repeated packaging retains one copy of the transfer instructions.
+
+## Authorized hosting preparation
+
+After the user requested an iPhone link and publication:
+
+- All 58 unit tests, the strict TypeScript/production build, and both production/mobile browser checks passed again. The mobile checks exercised the Home Screen files and offline retrieval/editing under the repository subpath. No real-iPhone test was performed.
+- The tested static website, including the offline worker and `.nojekyll`, was pushed to the previously absent `gh-pages` branch. Native Git verified remote commit `9c15b4762c5ed9cc6f4c552db902ea7f092402b7`.
+- GitHub repository/settings API requests returned `Forbidden`, including a request through the supported sandbox escalation. A request to the expected Pages host failed at the network proxy with HTTP 403 before contacting the website. These failures do not establish a live website or its hosting status.
+- Official `actions/configure-pages` documentation confirms that automatically enabling a new site requires a token beyond the Actions `GITHUB_TOKEN`. No credentials were extracted or added, and no action was launched with a known missing prerequisite.
+- Required access to `api.github.com` and `cmng28.github.io` was saved in the environment network draft, preserving the package-manager preset. Saving that draft does not apply runtime changes or publish the website.
+- Hosting activation requires repository settings access. [The iPhone instructions](iphone.md#enable-the-prepared-website) give the exact branch settings. No paid service, plan upgrade, or repository-visibility change was performed. Live HTTPS availability and Safari installation remain unverified.
