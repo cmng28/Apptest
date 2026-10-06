@@ -39,6 +39,7 @@ import { LibraryScreen } from "./components/LibraryScreen";
 import { TasteScreen } from "./components/TasteScreen";
 import { WorkCover } from "./components/WorkCover";
 import { SAMPLE_JOURNAL } from "./lib/samples";
+import { PhoneTools } from "./components/PhoneTools";
 import "./components/management.css";
 
 const TYPES: { value: WorkType; label: string; icon: typeof Palette }[] = [
@@ -385,8 +386,9 @@ function DeleteDialog({
     dialog?.showModal();
     return () => {
       dialog?.close();
-      if (invokingControl?.isConnected) invokingControl.focus({ preventScroll: true });
-      else document.getElementById('main')?.focus({ preventScroll: true });
+      if (invokingControl?.isConnected)
+        invokingControl.focus({ preventScroll: true });
+      else document.getElementById("main")?.focus({ preventScroll: true });
     };
   }, []);
   return (
@@ -892,11 +894,26 @@ export default function App() {
             </div>
           ))}
         {screen === "taste" && (
-          <TasteScreen
-            journal={journal}
-            sampleMode={sampleMode}
-            onSampleModeChange={setSampleMode}
-          />
+          <>
+            <TasteScreen
+              journal={journal}
+              sampleMode={sampleMode}
+              onSampleModeChange={setSampleMode}
+            />
+            <PhoneTools
+              journal={journal}
+              disabled={Boolean(loadError)}
+              onRestore={(backup) => {
+                commit(backup);
+                setSampleMode(false);
+                go("/library");
+                window.setTimeout(
+                  () => setNotice("Backup restored to your personal journal."),
+                  0,
+                );
+              }}
+            />
+          </>
         )}
         <footer>
           <span>

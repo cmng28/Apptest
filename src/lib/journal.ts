@@ -137,7 +137,7 @@ function validateInput(input: EntryInput): EntryInput {
   };
 }
 
-function validateJournal(value: unknown): Journal {
+export function validateJournal(value: unknown): Journal {
   if (
     !isRecord(value) ||
     value.version !== 1 ||

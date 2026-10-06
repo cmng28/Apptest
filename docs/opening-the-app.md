@@ -8,6 +8,8 @@ After the repository files have been uploaded to GitHub, open `downloads/Still.z
 
 The ZIP contains the complete app as `Still.html`, a Python 3 local launcher (`start.py`), and `OPEN_ME.txt` with instructions. There are no external app downloads, services, accounts, or fees.
 
+The updated desktop copy includes **My Taste → Save backup** and **Restore backup**. It keeps the same app filename and storage schema, so existing entries remain accessible when you use the same opening method, file location and browser profile. See [iPhone instructions](iphone.md) to transfer a backup after the hosted version is approved.
+
 For the tested launcher path, open a terminal in the extracted folder and run:
 
 ```sh

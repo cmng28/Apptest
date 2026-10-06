@@ -1,0 +1,103 @@
+.phone-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 30px;
+}
+.phone-tool {
+  background: #eeeee2;
+  border: 1px solid #dce0cf;
+  border-radius: 7px;
+  padding: 28px;
+  min-width: 0;
+}
+.phone-tool-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e1e7d4;
+  color: #465b3b;
+  margin-bottom: 22px;
+}
+.phone-tool h2 {
+  font: 27px/1.2 var(--serif);
+  letter-spacing: -0.5px;
+  margin-bottom: 17px;
+}
+.phone-tool > p:not(.eyebrow) {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #616c55;
+  margin: 14px 0;
+}
+.phone-tool .phone-footnote {
+  font-size: 10px !important;
+}
+.phone-tool .backup-count {
+  font-size: 11px !important;
+  font-weight: 600;
+}
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+.backup-actions .button {
+  font-size: 11px;
+}
+.backup-actions .button:disabled {
+  opacity: 0.55;
+  transform: none;
+}
+.phone-tool .offline-status {
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #e6e3d3;
+  font-size: 11px !important;
+}
+.phone-tool .offline-status.ready {
+  background: #dee8d2;
+  color: #385030;
+}
+.backup-message {
+  border-left: 3px solid #637f4f;
+  padding-left: 12px;
+}
+@media (max-width: 970px) {
+  .phone-tools {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .phone-tool {
+    padding: 23px 20px;
+  }
+  .phone-tool > p:not(.eyebrow) {
+    font-size: 13px;
+  }
+  .backup-actions .button {
+    min-height: 46px;
+  }
+  .phone-tool .phone-footnote {
+    font-size: 11px !important;
+  }
+  .app-shell .mobile-header {
+    padding-top: env(safe-area-inset-top);
+    height: calc(65px + env(safe-area-inset-top));
+    padding-left: max(22px, env(safe-area-inset-left));
+    padding-right: max(22px, env(safe-area-inset-right));
+  }
+  .app-shell main {
+    padding-left: max(22px, env(safe-area-inset-left));
+    padding-right: max(22px, env(safe-area-inset-right));
+    padding-bottom: calc(93px + env(safe-area-inset-bottom));
+  }
+  .app-shell .mobile-bottom-nav {
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+}

@@ -10,6 +10,8 @@ See [verified behavior and limitations](docs/verification.md) for the staged imp
 
 For a ready-to-run desktop copy, see [opening the app](docs/opening-the-app.md) and the portable package at `downloads/Still.zip`. Workspace links in the cloud setup chat are not live previews or downloadable attachments.
 
+For the prepared iPhone Home Screen version, offline access, and backup/restore instructions, see [iPhone setup](docs/iphone.md). The website awaits publication approval. **My Taste** now includes personal backup controls; backups exclude sample data.
+
 ## Development
 
 Requires Node.js 22.12+ and npm. The cloud environment supplies Node 24 and Chromium.
@@ -28,6 +30,7 @@ Use the existing checkout: cloud tasks already have an isolated environment and 
 npm test
 npm run build
 npm run test:e2e
+npm run test:iphone # Run npm run build first; tests the production/offline app.
 ```
 
 The build includes a strict TypeScript check. Playwright runs desktop and phone-size workflows with the system Chromium at `/usr/bin/chromium`. On another machine, adjust the configured executable path to a trusted installed Chromium. The test runner starts its own development server when needed.
@@ -36,4 +39,4 @@ The build includes a strict TypeScript check. Playwright runs desktop and phone-
 
 The versioned document in `localStorage` uses the key `still-journal-v1`. This is browser-local persistence, not encrypted storage. People with access to the same browser profile can read it, and clearing site data removes it. A corrupted document is kept rather than silently overwritten; write failures leave the previous journal and form intact. Sample records are separate from personal records.
 
-No publication or deployment is part of this work.
+Source uploads to the selected GitHub repository are authorized. Website publication has not been approved or performed. The prepared Pages workflow runs only when manually dispatched.

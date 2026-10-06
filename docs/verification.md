@@ -40,8 +40,17 @@ All four work types, optional creator and reaction, validated dates/year/type/st
 
 ## Scope and limits
 
-This is a browser-local, single-user MVP. Storage is not encrypted; there is no account, cross-device synchronization, export/backup, external catalog, social network, or recommendation engine. Clearing browser site data removes personal records. Failed saves retain the current form, but general navigation does not persist an unfinished draft.
+This is a browser-local, single-user MVP. Storage is not encrypted; there is no account, automatic cross-device synchronization, external catalog, social network, or recommendation engine. Clearing browser site data removes personal records. Failed saves retain the current form, but general navigation does not persist an unfinished draft. Manual backup/export and restore were added during the requested iPhone preparation below.
 
 Automated browser verification used system Chromium at desktop/phone-size viewports; real-device Safari and Firefox were not tested. Targeted accessibility checks covered keyboard focus, labels, contrast, and layout, rather than a complete accessibility audit.
 
 `install_script` and `start_skill` were saved to the cloud environment configuration draft. Draft saving is separate from runtime execution and environment publication. No app deployment, paid service, or publication was performed; restoration into a new published task has not been tested.
+
+## iPhone preparation
+
+- 58 model/backup tests passed, including all 44 original tests, full backup round-trip, schema rejection, size limits and sample isolation.
+- All 30 desktop/mobile browser tests passed, including the original 24 workflows. The 6 affected backup checks passed again after improving the local-date filename. File sharing was simulated to verify that the correct file is supplied and cancellation is reported honestly; a native iPhone share sheet was not exercised.
+- The strict TypeScript and production build passed. Two additional production browser checks passed under `/Apptest/`, verifying relative assets, Home Screen metadata, every icon's PNG dimensions, service-worker scope, readiness status, offline reload/fresh-tab reopening and offline editing.
+- iPhone safe-area CSS and viewport settings are included. Real-device Safari installation still needs a check after approved HTTPS hosting. Downloading Playwright WebKit was blocked by network policy at the official download destinations; no trust checks were disabled and no Safari pass is claimed.
+- The complete static-site ZIP and a manual-only GitHub Pages workflow are prepared. The workflow's only trigger is `workflow_dispatch`; source pushes do not deploy a site. Account eligibility for free Pages could not be checked through the blocked API route. No website, paid service, repository-visibility change, or plan upgrade was made.
+- The refreshed desktop ZIP was opened through local HTTP at a phone-size viewport. Adding an entry, downloading a backup containing its note, and retrieving it after reload passed with zero page errors or external requests. Both ZIP archives passed integrity checks; the hosted ZIP's files exactly matched the tested production build. Repeated packaging retains one copy of the transfer instructions.
